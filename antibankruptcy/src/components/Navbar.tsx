@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from 'antibankruptcy/src/Assets/Logo.jpg'
+import Logo from 'antibankruptcy/src/Assets/Logo.png'
 function Navbar() {
   return (
     <>
