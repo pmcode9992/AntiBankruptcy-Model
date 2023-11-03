@@ -1,11 +1,44 @@
 import pickle
 import numpy as np
+import sklearn
+from sklearn.preprocessing import MinMaxScaler
+from flask import Flask, request, render_template
 
-with open(r'Backend/project.pkl', 'rb') as file:
-    loaded_model = pickle.load(file)
+app = Flask(__name__)
 
-input_data = np.array([0.697457,0.302905,0.648900,0.451462,0.607668,0.375004,0.721731,0.478890,0.302440,0.602579]).reshape(1, -1)
+# Dummy data to store posted values
+data = []
 
-# Use the loaded model to make predictions
-predictions = loaded_model.predict(input_data)
-predictions
+@app.route('/')
+def index():
+    return "Welcome to Anti Bankruptcy"
+
+@app.route('/model/input', methods=['POST'])
+def model_input():
+    # Handle the form submission
+    data = request.get_json()  
+    try:
+        with open('project.pkl', 'rb') as file:
+            loaded_model = pickle.load(file)
+            scaler = MinMaxScaler()
+            scaled_data = scaler.fit_transform(np.array(data["Input"]).reshape(1, -1))
+            print("SCALED DATA - ", scaled_data)
+            input_data = scaled_data
+
+            # Use the loaded model to make predictions
+            predictions = loaded_model.predict(input_data)
+            print(predictions)
+        return f'{predictions}'
+    except Exception as e:
+        print(f"Error: {str(e)}")
+        return "Error"
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+
+
