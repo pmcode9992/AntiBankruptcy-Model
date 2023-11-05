@@ -45,7 +45,7 @@ To run this web project locally, follow these instructions:
    make run
    ```
 
-The backend server should now be running on http://localhost:8000.
+The backend server should now be running on http://localhost:5000.
 
 ### Frontend
 
