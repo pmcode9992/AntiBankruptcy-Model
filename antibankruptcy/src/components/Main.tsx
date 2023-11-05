@@ -103,7 +103,7 @@ function Main() {
           <div
             className="d-block position-absolute top-50 start-50 translate-middle bg-white p-5 border rounded shadow m-5 align-self-center w-50 overflow-scroll"
           >
-            {result===0?(
+            {result===1?(
             <>
             <div className="overflow-scroll" style={{ height: "650px" }}>
               <h2 className="text-danger">Prediction : Bankrupt</h2>
