@@ -92,7 +92,7 @@ function Main() {
             <button
               type="button"
               id="Test"
-              className="btn btn-primary"
+              className="btn btn-dark"
               onClick={() => CallModel()}
             >
               Test Bankruptcy
