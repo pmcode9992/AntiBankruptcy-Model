@@ -3,9 +3,10 @@ import numpy as np
 import sklearn
 from sklearn.preprocessing import MinMaxScaler
 from flask import Flask, request, render_template
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app) 
 # Dummy data to store posted values
 data = []
 
@@ -27,18 +28,10 @@ def model_input():
 
             # Use the loaded model to make predictions
             predictions = loaded_model.predict(input_data)
-            print(predictions)
         return f'{predictions}'
     except Exception as e:
         print(f"Error: {str(e)}")
         return "Error"
 
-
-
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-
