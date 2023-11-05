@@ -30,7 +30,7 @@ To run this web project locally, follow these instructions:
 1. Change your working directory to the `Backend` folder of the project:
 
    ```bash
-   cd anticipating-bankruptcy-website/Backend
+   cd Backend
    ```
 
 2. Install the required dependencies:
@@ -52,7 +52,7 @@ The backend server should now be running on http://localhost:8000.
 1. Change your working directory to the `anticipating-bankruptcy` folder of the project:
 
    ```bash
-   cd anticipating-bankruptcy-website/anticipating-bankruptcy
+   cd anticipating-bankruptcy
    ```
 
 2. Install the required dependencies:
